@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CODEWITHSHRIRAM - Virtual Internships for Remote Learning</title>
+    <title>CODEWITHSHRIRAM - By a Student. For Students.</title>
     <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header>
@@ -15,11 +17,11 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#founder">Founder</a></li>
-                <li><a href="#team">Our Team</a></li>
-                <li><a href="#internship">Internship</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#" class="enroll-btn" onclick="enrollNow()">ENROLL</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#offerings">What We Offer</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#" class="enroll-btn" onclick="enrollNow()">ENROLL NOW</a></li>
             </ul>
         </nav>
     </header>
@@ -29,41 +31,11 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content fade-in">
-                    <h1>Virtual Internships for Remote Learning</h1>
-                    <p>Practice your skills with real-world projects and expert guidance</p>
-                    <a href="#internship" class="hero-btn">Find Courses</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Programs Overview -->
-        <section class="programs">
-            <div class="container">
-                <h2 class="fade-in">Our Programs</h2>
-                <div class="program-grid">
-                    <div class="program-card fade-in">
-                        <div class="course-count">15+ Courses</div>
-                        <h3>Web Development</h3>
-                        <p>Master frontend and backend technologies with HTML, CSS, JavaScript, React, Node.js and more.</p>
-                    </div>
-                    <div class="program-card fade-in">
-                        <div class="course-count">12+ Courses</div>
-                        <h3>App Development</h3>
-                        <p>Build mobile applications using React Native, Flutter, and native iOS/Android development.</p>
-                    </div>
-                    <div class="program-card fade-in">
-                        <div class="course-count">10+ Courses</div>
-                        <h3>Java Programming</h3>
-                        <p>Learn Java from basics to advanced topics including Spring Boot and enterprise applications.</p>
-                    </div>
-                    <div class="program-card fade-in">
-                        <div class="course-count">8+ Courses</div>
-                        <h3>Python Development</h3>
-                        <p>Explore Python for web development, data science, machine learning, and automation.</p>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 2rem;">
-                    <a href="#" class="enroll-btn" onclick="enrollNow()">ENROLL NOW</a>
+                    <img src="img/cws.jpeg" alt="CodeWithShriram Logo" class="hero-logo">
+                    <h1>Empowering Students to Code, Build, and Grow</h1>
+                    <p class="motto">By a Student. For Students. Empowering the Future.</p>
+                    <p>Join CodeWithShriram and gain real-world coding experience through internships, live projects, and mentorship.</p>
+                    <a href="#programs" class="hero-btn">Available Courses</a>
                 </div>
             </div>
         </section>
@@ -73,32 +45,78 @@
             <div class="container">
                 <div class="about-content">
                     <div class="about-text fade-in">
-                        <h2>About CODEWITHSHRIRAM</h2>
-                        <p>We are a cutting-edge platform dedicated to empowering the next generation of tech professionals through practical, remote internships and comprehensive training programs.</p>
-                        <p>Founded with the vision to bridge the gap between academic learning and industry requirements, we provide hands-on experience with real-world projects, expert mentorship, and industry-recognized certifications.</p>
-                        <p><strong>Mission:</strong> To democratize quality tech education and make practical skills accessible to learners worldwide through innovative online programs.</p>
-                        <div class="stats">
-                            <div class="stat">
-                                <h3>20K+</h3>
-                                <p>Enrolled Learners</p>
-                            </div>
-                            <div class="stat">
-                                <h3>50+</h3>
-                                <p>Expert Mentors</p>
-                            </div>
-                            <div class="stat">
-                                <h3>95%</h3>
-                                <p>Success Rate</p>
-                            </div>
-                            <div class="stat">
-                                <h3>100+</h3>
-                                <p>Projects Completed</p>
-                            </div>
-                        </div>
+                        <h2>About CodeWithShriram</h2>
+                        <p>At CodeWithShriram, we believe learning should be practical and impactful. Founded by Sanjay Shriram of Panimalar Engineering College, our mission is to bridge the gap between academic knowledge and real-world skills.</p>
+                        <p>We are a student-driven initiative offering free internships, live projects, and a supportive community. Our programs focus on hands-on learning, ensuring every participant applies theory in practical scenarios.</p>
+                        <blockquote class="quote">
+                            "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन"
+                            <cite>– Bhagavad Gita 2.47</cite>
+                        </blockquote>
+                        <p>Our motto, "By a Student. For Students. Empowering the Future," reflects our core belief that when students help each other, everyone rises. Join us to gain technical skills, build your professional brand, and grow with a community that inspires.</p>
                     </div>
                     <div class="about-image fade-in">
-                        <img src="img/cws.jpeg" alt="CODEWITHSHRIRAM workspace" class="about-img">
-                        </div>
+                        <img src="img/cws.jpeg" alt="CodeWithShriram community" class="about-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Programs Section -->
+        <section id="programs" class="programs">
+            <div class="container">
+                <h2 class="fade-in">Our Programs</h2>
+                <div class="program-grid">
+                    <div class="program-card fade-in">
+                        <div class="program-status current">Current Program</div>
+                        <h3>Python Programming Internship</h3>
+                        <p>Learn Python from basics to advanced with real-world projects.</p>
+                    </div>
+                    <div class="program-card fade-in">
+                        <div class="program-status coming-soon">Coming Soon</div>
+                        <h3>AI & Machine Learning Internship</h3>
+                        <p>Build intelligent systems and explore machine learning algorithms with Python.</p>
+                    </div>
+                    <div class="program-card fade-in">
+                        <div class="program-status planned">Planned</div>
+                        <h3>Web Development Internship</h3>
+                        <p>Learn HTML, CSS, JavaScript, and React to build modern websites.</p>
+                    </div>
+                    <div class="program-card fade-in">
+                        <div class="program-status planned">Planned</div>
+                        <h3>Data Science Internship</h3>
+                        <p>Work on data analysis, visualization, and predictive models using Python & Pandas.</p>
+                    </div>
+                </div>
+                 <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#" class="enroll-btn" onclick="enrollNow()">ENROLL IN A PROGRAM</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- What We Offer Section -->
+        <section id="offerings" class="services">
+            <div class="container">
+                <h2 class="fade-in">What We Offer</h2>
+                <div class="services-grid">
+                    <div class="service-card fade-in">
+                        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>Live Project Internships</h3>
+                        <p>Gain practical, hands-on experience by building and deploying real-world applications from scratch.</p>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="service-icon"><i class="fas fa-users"></i></div>
+                        <h3>Student-Led Mentorship</h3>
+                        <p>Learn from peers who have been in your shoes. Get guidance, code reviews, and support from our dedicated team.</p>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+                        <h3>Career-Ready Portfolio</h3>
+                        <p>Graduate with a strong portfolio of projects to showcase your skills to recruiters and stand out in the job market.</p>
+                    </div>
+                     <div class="service-card fade-in">
+                        <div class="service-icon"><i class="fas fa-certificate"></i></div>
+                        <h3>Free Certification</h3>
+                        <p>Receive an industry-recognized certificate upon successful completion of your internship to validate your skills.</p>
                     </div>
                 </div>
             </div>
@@ -109,10 +127,11 @@
             <div class="container">
                 <h2 class="fade-in">Meet Our Founder</h2>
                 <div class="founder-card fade-in">
-                    <img src="img/sanjay.jpeg" alt="Photo of Sanjay Shriram" class="member-image">
+                    <img src="img/Sanjay.jpeg" alt="Photo of Sanjay Shriram" class="founder-image-pic">
                     <h3>Sanjay Shriram</h3>
-                    <p>"My vision for CODEWITHSHRIRAM is to create a platform where passionate learners can develop practical skills through real-world projects and expert guidance. I believe in learning by doing, and our internship programs are designed to give students the experience they need to succeed in the tech industry."</p>
-                    <p style="margin-top: 1.5rem; font-style: italic;">"Together, let's lay the foundation for your future prospects and dreams with the skills for excellence."</p>
+                    <p>Sanjay is the visionary founder of CodeWithShriram. A dedicated student at Panimalar Engineering College, he created this platform to help students overcome the challenge of graduating without real-world project experience.</p>
+                    <p class="message"><strong>Message from the Founder:</strong> "I started CodeWithShriram because I know what it feels like to be a student looking for guidance. This platform is my way of making sure no one walks alone on their learning journey. Together, we will code, innovate, and inspire."</p>
+                    <p class="motto">🚩 Vijay Bhava – May you be victorious in all your endeavors.</p>
                 </div>
             </div>
         </section>
@@ -123,100 +142,22 @@
                 <h2 class="fade-in">Our Expert Team</h2>
                 <div class="team-grid">
                     <div class="team-member fade-in">
-                        <div class="member-image">S T</div>
-                        <h3>Sarvajeeth.T</h3>
-                        <div class="role">Co-founder</div>
-                        <p>Expert in Python machin Learning.</p>
+                        <div class="member-image">ST</div>
+                        <h3>Sarvajeeth T.</h3>
+                        <div class="role">Chief Mentor</div>
+                        <p>A multi-talented leader guiding our technical strategy and mentorship programs.</p>
                     </div>
                     <div class="team-member fade-in">
-                        <div class="member-image">S</div>
+                        <div class="member-image">SJ</div>
                         <h3>Shane Jeshwin</h3>
-                        <div class="role">Python Programmer</div>
-                        <p>Experise in Python Programming</p>
+                        <div class="role">AI/ML Lead</div>
+                        <p>Expert in Python and Machine Learning, leading our AI-focused initiatives.</p>
                     </div>
                     <div class="team-member fade-in">
-                        <div class="member-image">P</div>
-                        <h3>XYZ</h3>
-                        <div class="role">ABC</div>
-                        <p>XYZ-ABC</p>
-                    </div>
-                    <div class="team-member fade-in">
-                        <div class="member-image">M</div>
-                        <h3>XYZ</h3>
-                        <div class="role">ABC</div>
-                        <p>Python expert with focus on machine learning, data science, and automation solutions.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Internship Section -->
-        <section id="internship" class="internship">
-            <div class="container">
-                <h2 class="fade-in">Available Internships</h2>
-                <div class="internship-grid">
-                    <div class="internship-card fade-in">
-                        <h3>Web Development Internship</h3>
-                        <p>Learn full-stack web development with hands-on projects using modern frameworks and tools.</p>
-                        <div class="courses-badge">Courses Available</div>
-                        <p style="margin-top: 1rem;"><strong>Duration:</strong> 3-6 months<br><strong>Projects:</strong> 5+ real-world applications</p>
-                    </div>
-                    <div class="internship-card fade-in">
-                        <h3>App Development Internship</h3>
-                        <p>Build mobile applications from scratch using Flutter, React Native, or native technologies.</p>
-                        <div class="courses-badge">Courses Available</div>
-                        <p style="margin-top: 1rem;"><strong>Duration:</strong> 4-6 months<br><strong>Projects:</strong> 3+ mobile apps</p>
-                    </div>
-                    <div class="internship-card fade-in">
-                        <h3>Java Development Internship</h3>
-                        <p>Master Java programming and enterprise development with Spring Boot and microservices.</p>
-                        <div class="courses-badge">Courses Available</div>
-                        <p style="margin-top: 1rem;"><strong>Duration:</strong> 3-5 months<br><strong>Projects:</strong> 4+ Java applications</p>
-                    </div>
-                    <div class="internship-card fade-in">
-                        <h3>Python Development Internship</h3>
-                        <p>Explore Python for web development, data analysis, and machine learning applications.</p>
-                        <div class="courses-badge">Courses Available</div>
-                        <p style="margin-top: 1rem;"><strong>Duration:</strong> 3-6 months<br><strong>Projects:</strong> 4+ Python projects</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="services">
-            <div class="container">
-                <h2 class="fade-in">Our Services</h2>
-                <div class="services-grid">
-                    <div class="service-card fade-in">
-                        <div class="service-icon">🎓</div>
-                        <h3>Expert Training</h3>
-                        <p>Learn from industry experts with years of real-world experience in cutting-edge technologies and best practices.</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <div class="service-icon">💻</div>
-                        <h3>Remote/Online Learning</h3>
-                        <p>Flexible learning schedules with live sessions, recorded content, and interactive workshops accessible from anywhere.</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <div class="service-icon">🚀</div>
-                        <h3>Project Guidance</h3>
-                        <p>One-on-one mentorship for your projects with code reviews, architecture guidance, and best practice recommendations.</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <div class="service-icon">📜</div>
-                        <h3>Certification & Verification</h3>
-                        <p>Industry-recognized certificates upon completion with LinkedIn verification and portfolio development support.</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <div class="service-icon">🤝</div>
-                        <h3>Alumni Support</h3>
-                        <p>Lifetime access to our alumni network, job placement assistance, and continued learning opportunities.</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <div class="service-icon">⭐</div>
-                        <h3>Career Development</h3>
-                        <p>Resume building, interview preparation, and career guidance to help you land your dream job in tech.</p>
+                        <div class="member-image">NB</div>
+                        <h3>NK Balaji</h3>
+                        <div class="role">Web Development Lead</div>
+                        <p>Specialist in modern web technologies, heading our web development curriculum.</p>
                     </div>
                 </div>
             </div>
@@ -224,12 +165,20 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="footer-content">
             <h3>Ready to Start Your Journey?</h3>
-            <p>"Join 20K+ enrolled learners boosting practical tech skills. Learning by doing: Real projects, real skills."</p>
+            <p>"Join a community of learners boosting practical tech skills. Learning by doing: Real projects, real skills."</p>
             <a href="#" class="final-cta" onclick="enrollNow()">START YOUR INTERNSHIP TODAY</a>
-            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #555;">
+             <div class="footer-socials">
+                <a href="https://www.linkedin.com/company/code-with-shriram/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/codewithshriram/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> <a href="mailto:codewithshriram@gmail.com">codewithshriram@gmail.com</a></p>
+            </div>
+            <div class="footer-bottom">
+                <p>Chennai, India</p>
                 <p>&copy; 2025 CODEWITHSHRIRAM. All rights reserved. | Empowering future tech professionals worldwide.</p>
             </div>
         </div>
@@ -239,4 +188,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

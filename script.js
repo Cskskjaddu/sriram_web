@@ -6,16 +6,11 @@ function toggleMenu() {
 
 // Enroll button functionality
 function enrollNow() {
-    // Replace with your actual Google Form URL
-    const googleFormUrl = "https://forms.google.com/your-enrollment-form";
+    // The Google Form URL for enrollment
+    const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfAEsmFmxJzDWd22eQGEoxCIJE8bClWMPhsdaI9d3EL8UZXow/viewform?usp=header";
     
-    // For demonstration, we'll show a message
-    // In a real application, you would use a custom modal instead of alert().
-    console.log("Redirecting to Google Forms for internship enrollment: " + googleFormUrl);
-    alert("🎉 Enrollment Form\n\nRedirecting to Google Forms for internship enrollment...\n\nNote: Replace this with your actual Google Form URL in the JavaScript code.");
-    
-    // Uncomment the line below and add your Google Form URL to open it in a new tab
-    // window.open(googleFormUrl, '_blank');
+    // Open the form in a new tab
+    window.open(googleFormUrl, '_blank');
 }
 
 // Close mobile menu when clicking outside
@@ -23,7 +18,7 @@ document.addEventListener('click', function(event) {
     const navMenu = document.getElementById('navMenu');
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     
-    if (!navMenu.contains(event.target) && !mobileToggle.contains(event.target)) {
+    if (navMenu.classList.contains('active') && !navMenu.contains(event.target) && !mobileToggle.contains(event.target)) {
         navMenu.classList.remove('active');
     }
 });
@@ -64,6 +59,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Animate only once
         }
     });
 }, observerOptions);
@@ -75,7 +71,7 @@ document.querySelectorAll('.fade-in').forEach(el => {
 
 // Active navigation highlighting on scroll
 window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
+    const sections = document.querySelectorAll('main section[id]');
     const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
     
     let current = '';
@@ -83,8 +79,7 @@ window.addEventListener('scroll', () => {
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop - headerHeight - 100;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        if (scrollY >= sectionTop) {
             current = section.getAttribute('id');
         }
     });
@@ -103,7 +98,7 @@ window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
-    if (scrollTop > lastScrollTop) {
+    if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
         // Scrolling down
         header.style.transform = 'translateY(-100%)';
     } else {
@@ -117,17 +112,12 @@ window.addEventListener('scroll', () => {
 // Parallax effect for hero section
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    const rate = scrolled * -0.3; // Adjust rate for more or less effect
+    const heroContent = document.querySelector('.hero-content');
+    const rate = scrolled * -0.3;
     
-    if (hero) {
-        // Apply parallax to the background or a specific element if needed
-        // For this example, we'll move the hero content
-        const heroContent = hero.querySelector('.hero-content');
-        if(heroContent) {
-           heroContent.style.transform = `translateY(${rate}px)`;
-           heroContent.style.opacity = 1 - (scrolled / 800);
-        }
+    if (heroContent) {
+       heroContent.style.transform = `translateY(${rate}px)`;
+       heroContent.style.opacity = 1 - (scrolled / 800);
     }
 });
 
@@ -141,8 +131,8 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
-// Add hover effects to cards for a bit more interactivity
-document.querySelectorAll('.program-card, .team-member, .service-card, .internship-card').forEach(card => {
+// Add hover effects to cards
+document.querySelectorAll('.program-card, .team-member, .service-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
         this.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
         this.style.transform = 'translateY(-10px)';
@@ -154,7 +144,7 @@ document.querySelectorAll('.program-card, .team-member, .service-card, .internsh
 });
 
 // Typing effect for hero title
-function typeWriter(element, text, speed = 100) {
+function typeWriter(element, text, speed = 80) {
     let i = 0;
     element.innerHTML = '';
     
@@ -175,46 +165,7 @@ window.addEventListener('load', () => {
         const originalText = heroTitle.textContent;
         
         setTimeout(() => {
-            typeWriter(heroTitle, originalText, 80);
-        }, 500); // Delay start of typing
+            typeWriter(heroTitle, originalText);
+        }, 500);
     }
-});
-
-// Counter animation for stats
-function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const originalText = element.textContent;
-    const suffix = originalText.replace(/[0-9]/g, ''); // Extracts 'K+', '%', '+'
-    const stepTime = 16; // roughly 60fps
-    const totalSteps = duration / stepTime;
-    const increment = target / totalSteps;
-    
-    function updateCounter() {
-        start += increment;
-        if (start < target) {
-            element.textContent = Math.floor(start) + suffix;
-            requestAnimationFrame(updateCounter);
-        } else {
-            element.textContent = target + suffix;
-        }
-    }
-    updateCounter();
-}
-
-// Initialize counter animations when stats come into view
-const statsObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statElement = entry.target.querySelector('h3');
-            const text = statElement.textContent;
-            const number = parseInt(text.replace(/\D/g, ''));
-            
-            animateCounter(statElement, number);
-            observer.unobserve(entry.target); // Animate only once
-        }
-    });
-}, { threshold: 0.8 }); // Trigger when 80% of the element is visible
-
-document.querySelectorAll('.stat').forEach(stat => {
-    statsObserver.observe(stat);
 });
